@@ -7,7 +7,7 @@ GET http://localhost:4000/api/orderSlips/8e0dc749-ca41-465f-88ee-e47532ba1fe0
 POST http://localhost:4000/api/orderSlips
 content-type: application/json
 
-{
+{ 
     "vendorName": "Asian Opticals",
     "outlet": "Golmuri",
     "clientName": "Dalton Sharpe",

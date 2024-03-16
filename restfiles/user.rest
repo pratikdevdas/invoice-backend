@@ -1,0 +1,9 @@
+POST http://localhost:4000/api/users
+content-type: application/json
+
+{
+  "username": "admin",
+  "password": "admin",
+  "vendor": "ap"
+}
+
