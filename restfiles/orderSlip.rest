@@ -1,0 +1,57 @@
+GET http://localhost:4000/api/orderSlips/
+
+###
+GET http://localhost:4000/api/orderSlips/8e0dc749-ca41-465f-88ee-e47532ba1fe0
+
+###
+POST http://localhost:4000/api/orderSlips
+content-type: application/json
+
+{
+    "vendorName": "Asian Opticals",
+    "outlet": "Golmuri",
+    "clientName": "Dalton Sharpe",
+    "clientEmail": "puwaruleh@mailinator.com",
+    "clientPhone": 854654696,
+    "clientAddress": "BhagwaPur",
+    "clientCity": "Halcity",
+    "clientPostCode": 4950402,
+    "clientGST": "GDT239DSFL43298",
+    "clientBirthDate": "1993-09-08",
+    "deliveryDate": "2024-04-06",
+    "advancePayment": 400,
+    "discount": 300,
+    "items": [
+      {
+        "name": "RayBan Sunglasses",
+        "quantity": "1",
+        "price": 3200,
+        "total": 3200,
+        "id": "302e676b-ef28-44fc-81fc-1dafb5c33d9b",
+        "gst": 18,
+        "specialCode": "21DSD"
+      }
+    ],
+    "createdAt": "2024-03-15",
+    "total": 3200,
+    "customId": "OR-GOLM-1-7",
+    "id": "8e0dc749-ca41-465f-88ee-e47532ba1fe0",
+    "leftToPay": 2500,
+    "status": "pending"
+  }
+
+###
+DELETE http://localhost:4000/api/blogs/61c4035f1df09498ebe4f88c
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJldiIsImlkIjoiNjFhYWNlYWE3YzQ3MWE5ZjlmNjBkODc0IiwiaWF0IjoxNjQwMzQ4NzA4fQ.BxaDHVd5oRkRqnm095xBG0FusDQXyU_5DdgA1DvKkf0
+
+###
+PUT http://localhost:4000/api/blogs/61aae6e7051e2c2972e78984
+content-type: application/json
+
+{
+     "title": "Hell wheres is the highway",
+  "author": "Sebastian Rathore",
+  "likes": 2,
+  "url": "jijijiji.com",
+  "userId":"61aaceaa7c471a9f9f60d874"
+}
