@@ -29,7 +29,6 @@ loginRouter.post('/', async (request, response) => {
             expiresIn: '1d',
         })
 
-        console.log(accessToken)
         const refreshToken = jwt.sign(userForToken, process.env.REFRESH_TOKEN_SECRET, {
             expiresIn: '30d',
         })
@@ -37,7 +36,7 @@ loginRouter.post('/', async (request, response) => {
         await User.findByIdAndUpdate(user.id, { refreshToken }, { new: true })
 
 
-        await response.cookie('jwt-refresh', accessToken, {
+        await response.cookie('jwt-refresh', refreshToken, {
             httpOnly: true,
             maxAge: 1000 * 60 * 60 * 24 * 30,
         })
