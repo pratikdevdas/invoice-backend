@@ -11,6 +11,7 @@ const mongoose = require('mongoose')
 const config = require('./utils/config')
 const cookieParser = require('cookie-parser')
 const middleware = require('./utils/middleware')
+const logoutRouter = require('./controllers/logout')
 
 mongoose
     .connect(config.MONGODB_URI)
@@ -28,7 +29,8 @@ app.use(cookieParser())
 app.use(middleware.requestLogger)
 
 app.use('/api/login', loginRouter)
-app.use('/api/refreshToken', refreshTokenRouter)
+app.use('/api/logout', logoutRouter)
+app.use('/api/refresh', refreshTokenRouter)
 app.use('/api/mail', mailRouter)
 app.use('/api/orderSlips', orderSlipRouter)
 app.use('/api/users', usersRouter)
