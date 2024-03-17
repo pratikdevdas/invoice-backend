@@ -4,6 +4,7 @@ const userSchema = new mongoose.Schema({
     username: String,
     vendor: String,
     passwordHash: String,
+    refreshToken: String,
 })
 
 userSchema.set('toJSON', {

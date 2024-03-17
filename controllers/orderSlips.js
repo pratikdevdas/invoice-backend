@@ -1,6 +1,6 @@
 const orderSlipRouter = require('express').Router()
 const OrderSlip = require('../models/orderSlip')
-// const middleware = require('../utils/middleware')
+const middleware = require('../utils/middleware')
 // const jwt = require('jsonwebtoken')
 
 orderSlipRouter.get('/', async(request, response) => {
@@ -8,8 +8,9 @@ orderSlipRouter.get('/', async(request, response) => {
     response.json(orderSlips)
 })
 
-orderSlipRouter.get('/:id', async(request, response) => {
+orderSlipRouter.get('/:id',[middleware.tokenExtractor, middleware.userExtractor], async(request, response) => {
     const orderSlip = await OrderSlip.findOne({ id: request.params.id })
+    console.log(request.user, 'user13')
     response.json(orderSlip)
 })
 

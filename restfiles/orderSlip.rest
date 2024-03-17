@@ -2,6 +2,7 @@ GET http://localhost:4000/api/orderSlips/
 
 ###
 GET http://localhost:4000/api/orderSlips/8e0dc749-ca41-465f-88ee-e47532ba1fe0
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI2NWY1Zjk0ZjBiYzdjOGI2YTY3ZTdhODEiLCJpYXQiOjE3MTA2NzkyNjMsImV4cCI6MTcxMDc2NTY2M30.K8D6s_UCsE-MK6AiCwpmKIJdN6W4a19ni3TXHRSzJvw
 
 ###
 POST http://localhost:4000/api/orderSlips
@@ -9,6 +10,8 @@ content-type: application/json
 
 { 
     "vendorName": "Asian Opticals",
+    "customId": "OR-GOLM-9-3",
+    "id": "8e0dc749-ca41-465f-08ee-e4fds42ba1fe0",
     "outlet": "Golmuri",
     "clientName": "Dalton Sharpe",
     "clientEmail": "puwaruleh@mailinator.com",
@@ -34,8 +37,6 @@ content-type: application/json
     ],
     "createdAt": "2024-03-15",
     "total": 3200,
-    "customId": "OR-GOLM-1-7",
-    "id": "8e0dc749-ca41-465f-88ee-e47532ba1fe0",
     "leftToPay": 2500,
     "status": "pending"
   }
