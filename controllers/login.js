@@ -7,12 +7,10 @@ loginRouter.post('/', async (request, response) => {
     try {
         const { username, password } = request.body
 
-        console.log('username:', username)
         const user = await User.findOne({ username })
         const passwordCorrect =
       user === null ? false : await bcrypt.compare(password, user.passwordHash)
 
-        console.log(user.id)
         if (!(user && passwordCorrect)) {
             return response.status(401).json({
                 error: 'invalid username or password',
@@ -38,6 +36,8 @@ loginRouter.post('/', async (request, response) => {
 
         await response.cookie('jwt-refresh', refreshToken, {
             httpOnly: true,
+            // sameSite: 'lax',
+            // secure: true,
             maxAge: 1000 * 60 * 60 * 24 * 30,
         })
 
